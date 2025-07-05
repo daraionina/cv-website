@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Projects – Nina Daraio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Georgia:400,700|Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="projects-container">
+    <div class="projects-header">
+      <div class="projects-header-nav">
+        <a href="index.html" class="header-nav-link">← HOME</a>
+        <h1>MY PROJECTS</h1>
+        <a href="contact.html" class="header-nav-link">CONTACT →</a>
+      </div>
+    </div>
+    <div class="projects-content">
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="project-card active">
+            <h2>Data Mining and Machine Learning | Masters Project</h2>
+            <ul>
+              <li>Applied K-Means clustering to segment urban park visitors based on behavioural and demographic variables.</li>
+              <li>Conducted data cleaning and preprocessing on a multi-variable dataset.</li>
+              <li>Created and evaluated multiple clusters to uncover patterns in facility usage.</li>
+              <li>Identified seasonal trends and spatial usage disparities to inform evidence-based recommendations.</li>
+              <li>Justified the use of unsupervised learning for pattern discovery in an unlabelled dataset.</li>
+              <li>Produced detailed insights to support urban planning and public space optimisation through data-driven analysis.</li>
+            </ul>
+            <div class="skills">
+              <strong>Skills used:</strong> K-Means Clustering, Data Exploration, Data Preprocessing, RStudio, Python, Data Interpretation, Gini Model
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h2>Quantitative Research Project | Dissertation</h2>
+            <ul>
+              <li>Designed and implemented a structured quantitative survey targeting 120+ residents to assess community data</li>
+              <li>Utilised SPSS and RStudio for statistical analysis, including regression, correlation, and normality testing, to examine factors influencing technology adoption.</li>
+              <li>Applied the Technology Acceptance Model (TAM) and Diffusion of Innovations Theory to interpret survey data and model behavioural intent.</li>
+            </ul>
+            <div class="skills">
+              <strong>Skills used:</strong> SQL, MS Office Suite, Descriptive Statistics, SPSS
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h2>Tableau Dashboard | Personal Project</h2>
+            <ul>
+              <li>Built an interactive, multi-source dashboard exploring the relationship between public AI interest, academic research output, and industry job trends.</li>
+              <li>Cleaned and standardized datasets from Google Trends, arXiv, and Kaggle (e.g. fixing date formats, normalizing job metrics, mapping AI terms to research categories).</li>
+              <li>Used Google Trends data, arXiv publication volumes, and job market datasets to compare search popularity vs actual adoption per AI term.</li>
+              <li>Designed dynamic views that let users filter by AI topic and visually track momentum over time.</li>
+              <li>Created custom parameters, calculated fields, and dual-axis visualizations to analyse time-lag effects between hype and impact.</li>
+            </ul>
+            <div class="skills">
+              <strong>Skills used:</strong> Tableau Public, Data Cleaning, Google Trends and arXiv API
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-controls">
+          <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">‹</button>
+          <div class="carousel-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+          </div>
+          <button class="carousel-btn next-btn" onclick="changeSlide(1)">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.project-card');
+    const indicators = document.querySelectorAll('.indicator');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        indicators[i].classList.remove('active');
+      });
+      
+      slides[index].classList.add('active');
+      indicators[index].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+      currentSlideIndex += direction;
+      
+      if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+      } else if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+      }
+      
+      showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(index) {
+      currentSlideIndex = index - 1;
+      showSlide(currentSlideIndex);
+    }
+  </script>
+</body>
+</html>
