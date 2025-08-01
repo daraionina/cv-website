@@ -1,0 +1,315 @@
+/* SHARED STYLES - Base styles used across all pages */
+
+/* Reset and Base Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Common Typography */
+.portfolio-label {
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  margin-top: 0;
+}
+
+.name {
+  font-size: 7vw;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.surname {
+  font-size: 7vw;
+  display: block;
+}
+
+.role {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  margin: 2rem 0 1.5rem 0;
+}
+
+/* Common Dividers */
+.divider {
+  border: none;
+  border-top: 3px solid #000;
+  width: 80%;
+  margin: 2rem 0;
+}
+
+.horizontal-divider {
+  width: 100%;
+  border-top: 3px solid #000;
+}
+
+/* Navigation Styles */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-top: 2rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: #000;
+  text-decoration: none;
+  padding: 0 1.5rem;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: #b8aca3;
+}
+
+.header-nav-link {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+  font-weight: 500;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.header-nav-link:hover {
+  color: #fff;
+}
+
+.nav-link {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #b8aca3;
+}
+
+/* Common Image Styles */
+.profile-pic {
+  max-width: 60%;
+  max-height: 80%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Common Text Styles */
+.intro-text {
+  font-size: 1.1rem;
+  font-family: 'Merriweather', serif;
+  margin: 2rem auto 0 auto;
+  max-width: 600px;
+  line-height: 1.5;
+  color: #222;
+  text-align: center;
+  display: block;
+}
+
+/* Common Button Styles */
+.download-btn {
+  background: #b8aca3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #9d8d7f;
+}
+
+/* Skills Common Styles */
+.skills {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.skills strong {
+  color: #000;
+  font-style: normal;
+}
+
+/* Image Modal Styles (used across multiple pages) */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoom-container {
+  width: 100%;
+  height: 80vh;
+  overflow: auto;
+  border: 2px solid #444;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-container:active {
+  cursor: grabbing;
+}
+
+.modal-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.zoom-btn {
+  background: #b8aca3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.zoom-btn:hover {
+  background: #9d8d7f;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #b8aca3;
+}
+
+/* Common Project Title Link Styles */
+.project-title-link {
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.project-title-link:hover {
+  color: #b8aca3;
+  cursor: pointer;
+}
+
+/* Responsive Design for Common Elements */
+@media (max-width: 900px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1rem;
+  }
+  
+  .name, .surname {
+    font-size: 10vw;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    max-width: 90vw;
+    padding: 0 1rem;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    padding: 6px;
+  }
+  
+  .modal-content {
+    max-width: 95%;
+    max-height: 95%;
+  }
+  
+  .zoom-container {
+    height: 70vh;
+  }
+  
+  .close-modal {
+    font-size: 30px;
+    top: -35px;
+  }
+  
+  .zoom-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

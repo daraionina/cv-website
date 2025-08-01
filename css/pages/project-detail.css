@@ -1,0 +1,344 @@
+/* PROJECT DETAIL PAGE STYLES */
+
+body {
+  overflow: auto;
+}
+
+.project-detail-container {
+  width: 100vw;
+  height: 100vh;
+  background: #b8aca3;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.project-detail-header {
+  background: #b8aca3;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project-detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 3rem;
+}
+
+.project-detail-nav h1 {
+  font-family: 'Georgia', serif;
+  font-size: 3vw;
+  font-weight: normal;
+  margin: 0;
+  letter-spacing: 0.05em;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-detail-content {
+  background: #fff;
+  flex: 1;
+  padding: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* PROJECT HEADER SECTION */
+.project-header-section {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  padding: 2rem 2rem 3rem 2rem;
+  border-bottom: 2px solid #b8aca3;
+  margin-bottom: 3rem;
+}
+
+.header-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-section {
+  flex: 1;
+  text-align: left;
+}
+
+.project-header-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.02em;
+}
+
+.project-intro {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+/* DOWNLOAD SECTION */
+.download-section {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.download-tableau-btn {
+  display: inline-block;
+  background: #c4b8af;
+  color: #000;
+  text-decoration: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(196, 184, 175, 0.3);
+  margin-bottom: 0.8rem;
+}
+
+.download-tableau-btn:hover {
+  background: #b8aca3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(184, 172, 163, 0.4);
+}
+
+.download-icon {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.download-note {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+/* SCREENSHOTS GRID */
+.screenshots-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 0 2rem 3rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.screenshot-item {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.screenshot-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.screenshot-image:hover {
+  transform: scale(1.02);
+}
+
+.screenshot-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: #fff;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.project-image-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.project-image {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.project-description {
+  width: 100%;
+  max-width: 800px;
+}
+
+.project-description h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+  color: #000;
+  text-align: center;
+}
+
+.project-description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.project-description li {
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.project-description li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #b8aca3;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.project-description .skills {
+  text-align: center;
+}
+
+/* IMAGES LAYOUT STYLES */
+.images-layout {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  min-height: 70vh;
+}
+
+.left-image-container {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.right-document-container {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  padding: 2rem;
+}
+
+.project-image-container {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.left-image:hover {
+  transform: scale(1.02);
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .project-header-section {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+
+  .header-content-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .intro-section {
+    text-align: center;
+  }
+
+  .project-header-section h2 {
+    font-size: 2rem;
+  }
+
+  .project-intro {
+    font-size: 1.1rem;
+  }
+
+  .download-tableau-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .screenshot-caption {
+    font-size: 1rem;
+    padding: 1.5rem 1rem 0.8rem 1rem;
+  }
+}

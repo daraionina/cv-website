@@ -1,0 +1,356 @@
+/* MOVEABLE COMPONENTS AND DOCUMENT PREVIEW STYLES */
+
+/* Moveable Text Box Styles */
+.moveable-text-box {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  user-select: none;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.text-box-header {
+  background: linear-gradient(135deg, #b8aca3, #9d8d7f);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px 12px 0 0;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.text-box-header:active {
+  cursor: grabbing;
+}
+
+.text-box-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.text-box-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn, .close-text-box {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover, .close-text-box:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.text-page-indicator {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.9);
+  min-width: 35px;
+  text-align: center;
+}
+
+.text-box-content {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Georgia', serif;
+}
+
+.text-page {
+  display: none;
+}
+
+.text-page.active {
+  display: block;
+}
+
+.text-page h4 {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.text-page p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  color: #555;
+  font-size: 14px;
+}
+
+.text-page ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.text-page li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+  color: #555;
+  font-size: 14px;
+}
+
+.text-page strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.toggle-text-box-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #b8aca3, #9d8d7f);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.toggle-text-box-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Document Preview Styles */
+.document-preview {
+  width: 100%;
+  max-width: 450px;
+  height: 100%;
+  max-height: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f8f8, #e8e8e8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.document-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.document-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.document-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hover-instruction {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+.document-pages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: block;
+  background: #fff;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.page-preview {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.page-preview.active {
+  display: block;
+}
+
+.page-preview h3 {
+  font-family: 'Georgia', serif;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.page-preview h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #555;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.page-preview p {
+  font-family: 'Georgia', serif;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.page-preview ul {
+  font-family: 'Georgia', serif;
+  color: #666;
+  margin: 0.5rem 0 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.page-preview li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.page-navigation {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.page-btn {
+  background: #b8aca3;
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.page-btn:hover {
+  background: #9d8d7f;
+}
+
+.page-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+.download-link {
+  position: static;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+/* Responsive design for moveable components */
+@media (max-width: 768px) {
+  .moveable-text-box {
+    width: 300px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .text-box-content {
+    padding: 15px;
+    max-height: 300px;
+  }
+  
+  .toggle-text-box-btn {
+    top: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moveable-text-box {
+    width: calc(100vw - 20px);
+    left: 10px;
+    right: 10px;
+  }
+  
+  .toggle-text-box-btn {
+    left: 10px;
+    right: 10px;
+    width: calc(100vw - 20px);
+  }
+}
