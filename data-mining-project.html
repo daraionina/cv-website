@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Data Mining and Machine Learning Project – Nina Daraio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Georgia:400,700|Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="project-detail-container">
+    <div class="project-detail-header">
+      <div class="project-detail-nav">
+        <a href="projects.html" class="header-nav-link">← ALL PROJECTS</a>
+        <h1>Data Mining and Machine Learning</h1>
+        <a href="contact.html" class="header-nav-link">CONTACT →</a>
+      </div>
+    </div>
+    <div class="project-detail-content">
+      <div class="images-layout">
+        <div class="left-image-container">
+          <img src="dm&ml_code.png" alt="Data Mining and Machine Learning Code" class="left-image" onclick="openImageModal(this.src)" style="cursor: pointer;">
+        </div>
+        <div class="right-document-container">
+          <div class="document-preview">
+            <div class="document-pages">
+              <div class="page-preview active">
+                <h3>Assignment 1: Data Mining Analysis</h3>
+                <p><strong>Student:</strong> Nina Daraio</p>
+                <p><strong>Course:</strong> Data Mining and Machine Learning</p>
+                <p><strong>Date:</strong> 2024</p>
+                <hr>
+                <h4>1. Introduction</h4>
+                <p>This assignment explores data mining techniques applied to real-world datasets, focusing on classification algorithms and their performance evaluation...</p>
+              </div>
+              
+              <div class="page-preview">
+                <h4>2. Methodology</h4>
+                <p><strong>2.1 Data Preprocessing</strong></p>
+                <p>The dataset underwent comprehensive preprocessing including:</p>
+                <ul>
+                  <li>Data cleaning and outlier detection</li>
+                  <li>Feature scaling and normalization</li>
+                  <li>Missing value imputation</li>
+                </ul>
+                <p><strong>2.2 Algorithm Selection</strong></p>
+                <p>Multiple classification algorithms were evaluated including Random Forest, SVM, and Neural Networks for optimal performance comparison.</p>
+              </div>
+              
+              <div class="page-preview">
+                <h4>3. Results and Analysis</h4>
+                <p><strong>3.1 Performance Metrics</strong></p>
+                <p>Algorithm performance comparison:</p>
+                <ul>
+                  <li><strong>Random Forest:</strong> 92.3% accuracy, F1-Score: 0.89</li>
+                  <li><strong>SVM:</strong> 89.7% accuracy, F1-Score: 0.86</li>
+                  <li><strong>Neural Network:</strong> 94.1% accuracy, F1-Score: 0.91</li>
+                </ul>
+                <p><strong>3.2 Conclusion</strong></p>
+                <p>Neural Networks demonstrated superior performance for this dataset, achieving the highest accuracy and F1-score metrics.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation and Download Controls (moved outside) -->
+          <div class="page-navigation">
+            <button class="page-btn" onclick="previousPage()" id="prevPageBtn">‹</button>
+            <span class="page-indicator" id="pageIndicator">1 / 3</span>
+            <button class="page-btn" onclick="nextPage()" id="nextPageBtn">›</button>
+          </div>
+          
+          <a href="assignment1.docx" class="download-link" download>
+            <button class="download-btn">
+              <span>�</span>
+              Download Document
+            </button>
+          </a>
+        </div>
+        <div class="project-image-container">
+          <img src="Untitled diagram _ Mermaid Chart-2025-07-07-152013.png" alt="Data Mining and Machine Learning Project Diagram" class="project-image" onclick="openImageModal(this.src)" style="cursor: pointer;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="closeImageModal()">&times;</span>
+      <div class="zoom-container">
+        <img src="" alt="Project Image" class="modal-image" id="zoomableImage">
+      </div>
+      <div class="zoom-controls">
+        <button onclick="zoomIn()" class="zoom-btn">+</button>
+        <button onclick="resetZoom()" class="zoom-btn">Reset</button>
+        <button onclick="zoomOut()" class="zoom-btn">-</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentZoom = 1;
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+    let currentPage = 1;
+    let totalPages = 3;
+
+    function openImageModal(imageSrc) {
+      document.getElementById('imageModal').style.display = 'flex';
+      document.getElementById('zoomableImage').src = imageSrc;
+      resetZoom();
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').style.display = 'none';
+      resetZoom();
+    }
+
+    function zoomIn() {
+      currentZoom = Math.min(currentZoom * 1.2, 5);
+      applyZoom();
+    }
+
+    function zoomOut() {
+      currentZoom = Math.max(currentZoom / 1.2, 0.5);
+      applyZoom();
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      applyZoom();
+      const container = document.querySelector('.zoom-container');
+      container.scrollLeft = 0;
+      container.scrollTop = 0;
+    }
+
+    function applyZoom() {
+      const image = document.getElementById('zoomableImage');
+      image.style.transform = `scale(${currentZoom})`;
+    }
+
+    // Document preview functions
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePage();
+      }
+    }
+
+    function previousPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePage();
+      }
+    }
+
+    function updatePage() {
+      const pages = document.querySelectorAll('.page-preview');
+      pages.forEach((page, index) => {
+        page.classList.toggle('active', index + 1 === currentPage);
+      });
+      
+      document.getElementById('pageIndicator').textContent = `${currentPage} / ${totalPages}`;
+      
+      // Update button states
+      document.getElementById('prevPageBtn').disabled = currentPage === 1;
+      document.getElementById('nextPageBtn').disabled = currentPage === totalPages;
+    }
+
+    // Initialize page navigation on load
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePage();
+    });
+
+    // Mouse wheel zoom
+    document.querySelector('.zoom-container').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+    });
+
+    // Dragging functionality
+    const container = document.querySelector('.zoom-container');
+    
+    container.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      startX = e.pageX - container.offsetLeft;
+      startY = e.pageY - container.offsetTop;
+      scrollLeft = container.scrollLeft;
+      scrollTop = container.scrollTop;
+      container.style.cursor = 'grabbing';
+    });
+
+    container.addEventListener('mouseleave', function() {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    });
+
+    container.addEventListener('mouseup', function() {
+      isDragging = false;
+      container.style.cursor = 'grab';
+    });
+
+    container.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const y = e.pageY - container.offsetTop;
+      const walkX = (x - startX) * 2;
+      const walkY = (y - startY) * 2;
+      container.scrollLeft = scrollLeft - walkX;
+      container.scrollTop = scrollTop - walkY;
+    });
+
+    // Close modal when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeImageModal();
+      }
+    });
+
+    // Keyboard navigation for document pages
+    document.addEventListener('keydown', function(event) {
+      const documentPages = document.getElementById('documentPages');
+      if (documentPages.style.display === 'block') {
+        if (event.key === 'ArrowLeft') {
+          previousPage();
+        } else if (event.key === 'ArrowRight') {
+          nextPage();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Tableau Interactive Dashboard – Nina Daraio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Georgia:400,700|Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="project-detail-container">
+    <div class="project-detail-header">
+      <div class="project-detail-nav">
+        <a href="projects.html" class="header-nav-link">← ALL PROJECTS</a>
+        <h1>AI Trends Analysis Dashboard</h1>
+        <a href="contact.html" class="header-nav-link">CONTACT →</a>
+      </div>
+    </div>
+    
+    <div class="project-detail-content">
+      <!-- Main Project Title and Download Section -->
+      <div class="project-header-section">
+        <div class="header-content-wrapper">
+          <div class="intro-section">
+            <p class="project-intro">Interactive Tableau dashboard exploring the relationship between AI hype and real-world adoption through multiple data sources.</p>
+          </div>
+          
+          <!-- Download Section for .twbx file -->
+          <div class="download-section">
+            <a href="AIHypeVSAdoption.twbx" class="download-tableau-btn" download>
+              <span class="download-icon">📊</span>
+              Download Tableau Workbook
+            </a>
+            <p class="download-note">Open with Tableau Desktop or Tableau Public</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots Grid -->
+      <div class="screenshots-grid">
+        <div class="screenshot-item">
+          <img src="Screenshot 2025-08-01 at 15.04.21.png" alt="Dashboard Overview" class="screenshot-image" onclick="openModal(this.src)">
+        </div>
+        
+        <div class="screenshot-item">
+          <img src="Screenshot 2025-08-01 at 15.04.42.png" alt="Trend Analysis View" class="screenshot-image" onclick="openModal(this.src)">
+        </div>
+        
+        <div class="screenshot-item">
+          <img src="Screenshot 2025-08-01 at 15.04.53.png" alt="Comparative Analytics" class="screenshot-image" onclick="openModal(this.src)">
+        </div>
+        
+        <div class="screenshot-item">
+          <img src="tableau-screenshot-1.png" alt="Interactive Filters" class="screenshot-image" onclick="openModal(this.src)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div class="zoom-container" id="zoomContainer">
+        <img id="modalImage" class="modal-image" alt="Project Image">
+      </div>
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()">+</button>
+        <button class="zoom-btn" onclick="zoomOut()">-</button>
+        <button class="zoom-btn" onclick="resetZoom()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    let currentZoom = 1;
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.style.display = 'flex';
+      resetZoom();
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+    }
+
+    function zoomIn() {
+      currentZoom *= 1.2;
+      applyZoom();
+    }
+
+    function zoomOut() {
+      currentZoom /= 1.2;
+      applyZoom();
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      applyZoom();
+      const container = document.getElementById('zoomContainer');
+      container.scrollLeft = 0;
+      container.scrollTop = 0;
+    }
+
+    function applyZoom() {
+      const modalImage = document.getElementById('modalImage');
+      modalImage.style.transform = `scale(${currentZoom})`;
+    }
+
+    // Mouse wheel zoom
+    document.getElementById('zoomContainer').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        zoomIn();
+      } else {
+        zoomOut();
+      }
+    });
+
+    // Drag functionality
+    const container = document.getElementById('zoomContainer');
+    
+    container.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      startX = e.pageX - container.offsetLeft;
+      startY = e.pageY - container.offsetTop;
+      scrollLeft = container.scrollLeft;
+      scrollTop = container.scrollTop;
+    });
+
+    container.addEventListener('mouseleave', function() {
+      isDragging = false;
+    });
+
+    container.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+
+    container.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const y = e.pageY - container.offsetTop;
+      const walkX = (x - startX) * 2;
+      const walkY = (y - startY) * 2;
+      container.scrollLeft = scrollLeft - walkX;
+      container.scrollTop = scrollTop - walkY;
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
