@@ -29,11 +29,7 @@ body {
 }
 
 .contact-header h1 {
-  font-family: 'Georgia', serif;
-  font-size: 4vw;
-  font-weight: normal;
   margin: 0;
-  letter-spacing: 0.05em;
   color: #000;
   flex: 1;
   text-align: center;
@@ -62,9 +58,6 @@ body {
 }
 
 .contact-label {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.15em;
   margin-top: 0.5rem;
   color: #222;
 }
@@ -101,7 +94,6 @@ body {
   }
   
   .contact-header h1 {
-    font-size: 7vw;
     padding: 0.5em 0.5em;
     margin: 2rem 0 0 0;
   }

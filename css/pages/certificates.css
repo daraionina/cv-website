@@ -10,9 +10,6 @@ body {
 }
 
 .certificates-section h2 {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  font-weight: bold;
   color: #000;
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
@@ -70,17 +67,11 @@ body {
 }
 
 .certificate-info h2 {
-  font-family: 'Georgia', serif;
-  font-size: 1.3rem;
-  font-weight: bold;
   color: #000;
   margin: 0 0 1rem 0;
 }
 
 .certificate-description {
-  font-family: 'Georgia', serif;
-  font-size: 1rem;
-  line-height: 1.6;
   color: #555;
   margin: 0;
 }
