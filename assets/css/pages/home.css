@@ -1,5 +1,10 @@
 /* HOME PAGE STYLES (index.html) */
 
+/* Home page specific body styles */
+body {
+  overflow: hidden; /* Only for home page desktop view */
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -371,6 +376,10 @@
 }
 
 @media (max-width: 900px) {
+  body {
+    overflow: auto; /* Allow scrolling on mobile */
+  }
+  
   .container {
     flex-direction: column;
     height: auto;
