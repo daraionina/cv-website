@@ -1,21 +1,94 @@
 /* HOME PAGE STYLES (index.html) */
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .container {
   display: flex;
   height: 100vh;
   width: 100vw;
+  position: relative;
+  overflow: hidden;
 }
 
 .left, .right {
   height: 100vh;
   width: 50vw;
+  position: relative;
 }
 
 .left {
-  background: #fff;
+  background: linear-gradient(-45deg, #ffffff, #f8f9fa, #ffffff, #f5f5f5);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(184,172,163,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184,172,163,0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .left-content {
@@ -23,15 +96,147 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio-label {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  position: relative;
+}
+
+.portfolio-label::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b8aca3, #d4c4b0);
+  transition: width 0.8s ease;
+}
+
+.portfolio-label:hover::after {
+  width: 100%;
+}
+
+.name {
+  animation: slideInLeft 1s ease-out 0.4s both;
+  position: relative;
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: slideInLeft 1s ease-out 0.4s both, gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.surname {
+  display: block;
+  animation: slideInRight 1s ease-out 0.6s both;
+}
+
+.role {
+  animation: fadeInUp 1s ease-out 0.8s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.role::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184,172,163,0.3), transparent);
+  animation: shine 2s ease-in-out 1.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.divider {
+  animation: fadeInUp 1s ease-out 1s both;
+  background: linear-gradient(90deg, transparent, #b8aca3, transparent);
+  height: 2px;
+  border: none;
+  width: 80%;
+  position: relative;
+}
+
+.main-nav {
+  animation: fadeInUp 1.2s ease-out 1.2s both;
+}
+
+.main-nav a {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+}
+
+.main-nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184,172,163,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.main-nav a:hover::before {
+  left: 100%;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b8aca3, #d4c4b0);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 80%;
+}
+
+.main-nav a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(184,172,163,0.3);
 }
 
 .right {
-  background: #b8aca3;
+  background: linear-gradient(135deg, #b8aca3 0%, #d4c4b0 50%, #b8aca3 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   padding: 0;
+  position: relative;
+}
+
+.right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .intro {
@@ -40,11 +245,71 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInRight 1s ease-out 0.5s both;
+}
+
+.intro > div {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.intro > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .intro span {
-  margin-top: 3rem;
+  margin-top: 0;
   display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.intro span::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+}
+
+.intro-text {
+  color: #2c3e50;
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .photo {
@@ -53,36 +318,117 @@
   align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-out 0.7s both;
 }
 
 .photo span {
   display: block;
 }
 
+.profile-pic {
+  max-width: 280px;
+  max-height: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.3),
+    0 0 0 8px rgba(255,255,255,0.1),
+    0 0 0 16px rgba(255,255,255,0.05);
+  transition: all 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+}
+
+.profile-pic::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, #b8aca3, #d4c4b0, #b8aca3, #d4c4b0);
+  background-size: 400% 400%;
+  border-radius: 24px;
+  z-index: -1;
+  animation: gradient 8s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.4),
+    0 0 0 12px rgba(255,255,255,0.15),
+    0 0 0 24px rgba(255,255,255,0.08);
+}
+
+.profile-pic:hover::before {
+  opacity: 0.7;
+}
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
-  }
-  
-  .left, .right {
-    width: 100vw;
-    height: 50vh;
-  }
-  
-  .container {
-    flex-direction: column;
-    width: 100vw;
     height: auto;
   }
   
   .left, .right {
     width: 100vw;
     height: auto;
-    min-height: unset;
+    min-height: 50vh;
+  }
+  
+  .left::before,
+  .right::before {
+    display: none;
   }
   
   .intro, .photo {
     padding: 2rem 1rem;
+  }
+  
+  .intro > div {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .intro span {
+    font-size: 1rem;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+  }
+  
+  .profile-pic {
+    max-width: 220px;
+    max-height: 280px;
+  }
+  
+  .main-nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .main-nav a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .name {
+    font-size: 8vw;
+  }
+  
+  .role {
+    font-size: 1rem;
+  }
+  
+  .portfolio-label {
+    font-size: 0.9rem;
   }
 }
