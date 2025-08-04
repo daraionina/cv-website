@@ -16,9 +16,143 @@
         <a href="projects.html" class="header-nav-link">PROJECTS →</a>
       </div>
     </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-arrow">
+        <span>↓</span>
+      </div>
+      <div class="scroll-text">Scroll to explore</div>
+    </div>
+    
     <div class="resume-content">
-      <!-- Content will be added later -->
+      <!-- Skills -->
+      <div class="resume-section">
+        <h2>Technical Skills</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-header">
+              <div class="skill-icon">💻</div>
+              <h3>Programming/Analysis</h3>
+            </div>
+            <ul>
+              <li>Python (pandas, NumPy)</li>
+              <li>SQL (query writing and data extraction)</li>
+              <li>RStudio</li>
+              <li>SPSS</li>
+              <li>Excel (pivoting, dynamic models)</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-header">
+              <div class="skill-icon">📊</div>
+              <h3>Visualization/Dashboards</h3>
+            </div>
+            <ul>
+              <li>Tableau (custom parameters, dual-axis, interactivity)</li>
+              <li>Power BI</li>
+              <li>Dashboard performance tuning</li>
+              <li>Qlik</li>
+              <li>Google Analytics</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-header">
+              <div class="skill-icon">📈</div>
+              <h3>Modelling/Statistics</h3>
+            </div>
+            <ul>
+              <li>Clustering (K-Means)</li>
+              <li>Regression</li>
+              <li>Correlation and Normality Testing</li>
+              <li>Descriptive Statistics</li>
+              <li>Survey Design</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-header">
+              <div class="skill-icon">🔧</div>
+              <h3>Data Manipulation</h3>
+            </div>
+            <ul>
+              <li>Data Cleaning/Preprocessing</li>
+              <li>ETL thinking</li>
+              <li>Multi-source merge</li>
+              <li>Data Exploration</li>
+              <li>Data Interpretation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="resume-section">
+        <h2>Work Experience</h2>
+        
+        <div class="experience-item">
+          <h3>Data Analyst Intern</h3>
+          <p class="company">Lacasacontinua Ltd | Milan, Italy</p>
+          <p class="date">06/2023 – 08/2023</p>
+          <ul>
+            <li>Conducted market research to understand competitor pricing, sales trends, and social media sentiment to identify emerging interior design preferences, informing decisions</li>
+            <li>Translated raw customer behaviour data into business insights using Qlik dashboards, enabling product and marketing teams to tailor offers</li>
+            <li>Extracted and interpreted Google Analytics metrics to recommend targeted website optimisations; changes contributed to a 15% lift in customer interactions</li>
+            <li>Presented findings regularly to cross-functional stakeholders, aligning analytics outputs with marketing campaign goals</li>
+          </ul>
+          <p><strong>Key Skills:</strong> Qlik, Google Analytics, data gathering, data cleaning, stakeholder reporting, MS Office Suite, customer segmentation</p>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="resume-section">
+        <h2>Education</h2>
+        
+        <div class="education-item">
+          <h3>Master of Science with Honours in Business Analytics and Big Data</h3>
+          <p class="institution">University of Liverpool</p>
+          <p class="date">09/2024 – 09/2025</p>
+        </div>
+        
+        <div class="education-item">
+          <h3>Bachelor of Science with Honours in Business Management</h3>
+          <p class="institution">University of Stirling</p>
+          <p class="date">09/2020 – 06/2024</p>
+          <div class="award-download">
+            <a href="../2917284_1_Award_Letter.pdf" class="award-btn" download>📄 Download Award Letter</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Resume -->
+      <div class="download-resume">
+        <a href="../CV.docx" class="download-resume-btn" download>Download Resume</a>
+      </div>
     </div>
   </div>
+
+  <script>
+    // Scroll indicator functionality
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    let hasScrolled = false;
+
+    function handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 100 && !hasScrolled) {
+        hasScrolled = true;
+        scrollIndicator.classList.add('hidden');
+      } else if (scrollTop <= 100 && hasScrolled) {
+        hasScrolled = false;
+        scrollIndicator.classList.remove('hidden');
+      }
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  </script>
 </body>
 </html>
