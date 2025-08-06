@@ -387,7 +387,7 @@ body {
 
 @media (max-width: 600px) {
   .certificates-header h1 {
-    font-size: 2rem;
+    display: none;
   }
   
   .certificates-content {
@@ -432,3 +432,7 @@ body {
     right: 1rem;
   }
 }
+
+  .header-nav-link {
+    padding: 0;
+  }
