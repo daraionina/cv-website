@@ -534,7 +534,47 @@ body {
 /* Responsive Design */
 @media (max-width: 900px) {
   .resume-header h1 {
-    font-size: 2.5rem;
+    font-size: 0;
+    position: relative;
+  }
+  
+  .resume-header h1::before {
+    content: 'MY CV';
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    text-shadow: none;
+    white-space: nowrap;
+    color: #2c3e50;
+  }
+  
+  .resume-header-nav {
+    padding: 0 1rem;
+  }
+  
+  .resume-header-nav .header-nav-link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .resume-header-nav .header-nav-link:first-child {
+    left: 1rem;
+  }
+  
+  .resume-header-nav .header-nav-link:last-child {
+    right: 1rem;
   }
   
   .resume-content {
@@ -587,7 +627,24 @@ body {
 
 @media (max-width: 600px) {
   .resume-header h1 {
-    font-size: 2rem;
+    font-size: 0;
+    position: relative;
+  }
+  
+  .resume-header h1::before {
+    font-size: 1.6rem;
+  }
+  
+  .resume-header-nav {
+    padding: 0 0.5rem;
+  }
+  
+  .resume-header-nav .header-nav-link:first-child {
+    left: 0.5rem;
+  }
+  
+  .resume-header-nav .header-nav-link:last-child {
+    right: 0.5rem;
   }
   
   .resume-content {
