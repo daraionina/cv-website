@@ -13,3 +13,14 @@ document.querySelectorAll('.main-nav a').forEach(link => {
   });
 });
 
+// Scroll to explore functionality
+function scrollToBottom() {
+  const rightSection = document.querySelector('.right');
+  if (rightSection) {
+    rightSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
