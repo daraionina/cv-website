@@ -1,0 +1,293 @@
+/* HEADER COMPONENT STYLES */
+
+/* Base Header Styles */
+.header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Specific Header Variants */
+.projects-header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.projects-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.projects-header h1 {
+  margin: 0;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.resume-header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.resume-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.resume-header h1 {
+  margin: 0;
+  color: #000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.contact-header h1 {
+  margin: 0;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.certificates-header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.certificates-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.certificates-header h1 {
+  margin: 0;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-detail-header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.project-detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+}
+
+.project-detail-nav h1 {
+  margin: 0;
+  color: #000;
+  flex: 1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .header h1,
+  .projects-header h1,
+  .resume-header h1,
+  .contact-header h1,
+  .certificates-header h1,
+  .project-detail-nav h1 {
+    font-size: 2.5rem;
+  }
+  
+  .resume-header h1 {
+    font-size: 0;
+    position: relative;
+  }
+  
+  .resume-header h1::before {
+    content: 'MY CV';
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    text-align: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    text-shadow: none;
+    white-space: nowrap;
+    color: #2c3e50;
+  }
+  
+  .header-nav,
+  .projects-header-nav,
+  .resume-header-nav,
+  .contact-header-nav,
+  .certificates-header-nav,
+  .project-detail-nav {
+    padding: 0 1rem;
+  }
+  
+  .resume-header-nav .header-nav-link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .resume-header-nav .header-nav-link:first-child {
+    left: 1rem;
+  }
+  
+  .resume-header-nav .header-nav-link:last-child {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header h1,
+  .projects-header h1,
+  .contact-header h1,
+  .certificates-header h1,
+  .project-detail-nav h1 {
+    font-size: 2rem;
+  }
+  
+  .resume-header h1::before {
+    font-size: 1.5rem;
+  }
+  
+  .header-nav,
+  .projects-header-nav,
+  .resume-header-nav,
+  .contact-header-nav,
+  .certificates-header-nav,
+  .project-detail-nav {
+    padding: 0 1rem;
+  }
+}
